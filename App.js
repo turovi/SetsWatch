@@ -1,20 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { TimerCountDownDisplay } from './components/TimerCountDownDisplay';
+import {UpdateTimerButton} from './components/UpdateTimerButton';
+import { TimerModedisplay } from './components/TimerModeDisplay';
+import { TimerSelector } from './components/TimerSelector';
+import { Pomodoro } from './views/Pomodoro';
+
+
 
 export default function App() {
+
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+       <Pomodoro />
+       <Text>Pomodoro</Text>
+       <Text>Chrono</Text>
+       <Text>Minuteur</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
+  
+  
+
 });
