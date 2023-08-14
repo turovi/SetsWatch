@@ -1,0 +1,6 @@
+npm i expo
+npm i @react-native-picker/picker
+npm i expo-constants
+npm i moment
+
+https://www.reactnativeschool.com/build-a-custom-react-hook-stopwatch

@@ -3,22 +3,11 @@ import {
   StyleSheet,
   View,
   Text,
-  Dimensions,
-  StatusBar,
-  TouchableOpacity,
   Platform,
   Button,
 } from "react-native";
 
 import { Picker } from "@react-native-picker/picker";
-
-// const formatNumber = number => `0${number}` . slice(-2);
-
-// const getRemaining = time => {
-//   const minutes = Math.floor(time / 60);
-//   const seconds = time - minutes * 60;
-//   return {minutes: formatNumber(minutes), seconds: formatNumber(seconds)}
-// }
 
 const createArray = (length) => {
   const arr = [];

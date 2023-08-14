@@ -6,6 +6,7 @@ import {UpdateTimerButton} from './components/UpdateTimerButton';
 import { TimerModedisplay } from './components/TimerModeDisplay';
 import { TimerSelector } from './components/TimerSelector';
 import { Pomodoro } from './views/Pomodoro';
+import { StopWatch } from './views/StopWatch';
 
 
 
@@ -15,10 +16,13 @@ export default function App() {
   return (
     <View style={styles.container}>
        <Pomodoro />
+       {/* <StopWatch/> */}
        <Text>Pomodoro</Text>
        <Text>Chrono</Text>
        <Text>Minuteur</Text>
     </View>
+
+
   );
 }
 

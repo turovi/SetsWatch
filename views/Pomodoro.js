@@ -18,7 +18,7 @@ export const Pomodoro = () => {
   const [isTimerRunning, setIstimerRunning] = useState(false);
   const [timerMode, setTimerMode] = useState(true);
   const [isTimerCalled, setIsTimerCalled] = useState(false);
-  const [isTimerReset, setIsTimerRest] = useState(false);
+  const [isTimerReset, setIsTimerReset] = useState(false);
   const [focusMinutesTime, setFocusMinutesTime] = useState(0);
   const [focusSecondsTime, setFocusSecondsTime] = useState(5000);
   const [breakMinutesTime, setBreakMinutesTime] = useState(0);
@@ -120,6 +120,8 @@ export const Pomodoro = () => {
     }
     i = 0
     s = 1
+
+    startTimer()
     
     
   }
@@ -173,7 +175,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
-    height: "70%",
+    height: "75%",
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
   },
