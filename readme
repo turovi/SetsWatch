@@ -2,5 +2,6 @@ npm i expo
 npm i @react-native-picker/picker
 npm i expo-constants
 npm i moment
+npm i react-native-stopwatch-timer
 
 https://www.reactnativeschool.com/build-a-custom-react-hook-stopwatch
