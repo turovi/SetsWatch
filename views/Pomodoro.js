@@ -1,7 +1,7 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { TimerCountDownDisplay } from "../components/TimerCountDownDisplay";
 import { UpdateTimerButton } from "../components/UpdateTimerButton";
 import { TimerModedisplay } from "../components/TimerModeDisplay";
@@ -135,7 +135,7 @@ export const Pomodoro = () => {
   };
 
   return (
-    <View
+    <SafeAreaView
       style={{
         ...styles.container,
         ...{ backgroundColor: timerMode === false ? "#738295" : "#535458" },
@@ -163,7 +163,7 @@ export const Pomodoro = () => {
       <Button onPress={resetTimer} title="Reset" />
       <Button onPress={resetSets} title="Reset all sets" />
 
-    </View>
+    </SafeAreaView>
   );
 };
 

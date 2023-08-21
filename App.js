@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import { TimerCountDownDisplay } from './components/TimerCountDownDisplay';
 import {UpdateTimerButton} from './components/UpdateTimerButton';
 import { TimerModedisplay } from './components/TimerModeDisplay';
@@ -14,13 +14,13 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>
-       <Pomodoro />
-       {/* <StopWatch/> */}
-       <Text>Pomodoro</Text>
-       <Text>Chrono</Text>
-       <Text>Minuteur</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+       {/* <Pomodoro /> */}
+       <StopWatch/>
+       {/* <Text>Pomodoro</Text> */}
+       {/* <Text>Chrono</Text> */}
+       {/* <Text>Minuteur</Text> */}
+    </SafeAreaView>
 
 
   );
