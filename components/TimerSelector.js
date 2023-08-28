@@ -21,7 +21,7 @@ const createArray = (length) => {
 
 const AVAILABLE_MINUTES = createArray(11);
 const AVAILABLE_SECONDS = createArray(60);
-const AVAILABLE_SETS = createArray(21);
+
 
 //----------------------------------------
 //------------------------------------------
@@ -29,13 +29,12 @@ const AVAILABLE_SETS = createArray(21);
 export const TimerSelector = ({
   onSelectedMinutesChange,
   onSelectedSecondsChange,
-  onSetsChange,
   isTimerRunning
 }) => {
   state = {
     selectedMinutes: "0",
     selectedSeconds: "5",
-    selectedSets: "1",
+    
   };
 
   const [selectedM, setSelectedM] = useState(0);
@@ -45,7 +44,7 @@ export const TimerSelector = ({
   const applyTime = () => {
     onSelectedMinutesChange(selectedM);
     onSelectedSecondsChange(selectedS);
-    onSetsChange(selectedSets);
+    
   };
 
   useEffect(()=>{

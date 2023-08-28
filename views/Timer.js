@@ -9,8 +9,7 @@ import { TimerSelector } from "../components/TimerSelector";
 const Focus_Time_MINUTES = 0.1 * 60 * 1000;
 const Focus_Time_SECONDS = 1 * 1000;
 const BREAK_Time_MINUTES = 0.1 * 60 * 1000;
-let i = 0
-let s = 1
+
 export const Timer = () => {
   const [timerCount, setTimerCount] = useState(1);
   const [timerInterval, setTimerInterval] = useState(null);
@@ -27,11 +26,14 @@ export const Timer = () => {
 
   useEffect(() => {
 
-        
+    
         if (timerCount === 0) {
          
            stopTimer()
-
+           setSets((prev) => prev += 1 );
+           
+           resetTimer()
+           
         }
 
   }, [timerCount]);
@@ -49,9 +51,7 @@ export const Timer = () => {
     setSecondsTime(selectedSeconds * 1000);
   };
 
-  const handleSets = (selectedSets) => {
-    setSets(selectedSets);
-  };
+
 
   const startTimer = () => {
     
@@ -85,10 +85,9 @@ export const Timer = () => {
     if (timerInterval != null) {
       clearInterval(timerInterval);
     }
-    i = 0
-    s = 1
+    setSets(1)
 
-    startTimer()
+   resetTimer()
     
     
   }
@@ -111,13 +110,12 @@ export const Timer = () => {
         stopTimer={stopTimer}
       />
       <TimerCountDownDisplay timerDate={new Date(timerCount)} />
-      <Text>Actual set : {s}/{sets}</Text>
+      <Text>Actual set : {sets}</Text>
 
       <TimerSelector
         isTimerRunning = {isTimerRunning}
         onSelectedMinutesChange={handleSelectedMinutes}
         onSelectedSecondsChange={handleSelectedSeconds}
-        onSetsChange={handleSets}
       />
 
       <Button onPress={resetTimer} title="Reset" />
