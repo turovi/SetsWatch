@@ -12,7 +12,7 @@ const Focus_Time_SECONDS = 1 * 1000;
 const BREAK_Time_MINUTES = 0.1 * 60 * 1000;
 let i = 0
 let s = 1
-export const Pomodoro = () => {
+export const Pomodoro = ({openPomodoro}) => {
   const [timerCount, setTimerCount] = useState(1);
   const [timerInterval, setTimerInterval] = useState(null);
   const [isTimerRunning, setIstimerRunning] = useState(false);
@@ -137,7 +137,7 @@ export const Pomodoro = () => {
   return (
     <SafeAreaView
       style={{
-        ...styles.container,
+        ...openPomodoro ? styles.container : styles.containerOff,
         ...{ backgroundColor: timerMode === false ? "#738295" : "#535458" },
       }}
     >
@@ -175,6 +175,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
+    height: "75%",
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+  },
+  containerOff: {
+    width: "100%",
+    backgroundColor: "#535458",
+    alignItems: "center",
+    justifyContent: "center",
+    position : "absolute" ,
+    left: "100%",
     height: "75%",
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,

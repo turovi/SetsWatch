@@ -10,7 +10,7 @@ const Focus_Time_MINUTES = 0.1 * 60 * 1000;
 const Focus_Time_SECONDS = 1 * 1000;
 const BREAK_Time_MINUTES = 0.1 * 60 * 1000;
 
-export const Timer = () => {
+export const Timer = ({openTimer}) => {
   const [timerCount, setTimerCount] = useState(1);
   const [timerInterval, setTimerInterval] = useState(null);
   const [isTimerRunning, setIstimerRunning] = useState(false);
@@ -96,10 +96,7 @@ export const Timer = () => {
 
   return (
     <SafeAreaView
-      style={{
-        ...styles.container,
-        backgroundColor:"#738295"
-      }}
+      style={openTimer ? styles.container : styles.containerOff}
     >
 
 
@@ -136,6 +133,17 @@ const styles = StyleSheet.create({
     height: "75%",
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
-  }
+  },
+  containerOff: {
+    width: "100%",
+    backgroundColor: "#535458",
+    alignItems: "center",
+    justifyContent: "center",
+    position : "absolute" ,
+    left: "100%",
+    height: "75%",
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+  },
  
 });
